@@ -3,7 +3,7 @@ from flask import request, jsonify
 from iebank_api.models import Account  # Import the Account model
 
 @app.route('/accounts', methods=['POST'])
-def create_account():
+def create_new_account():
     data = request.get_json()
     new_account = Account(name=data['name'], currency=data['currency'], country=data['country'])
     db.session.add(new_account)
